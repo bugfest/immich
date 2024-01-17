@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import FFmpegSettings from '$lib/components/admin-page/settings/ffmpeg/ffmpeg-settings.svelte';
   import JobSettings from '$lib/components/admin-page/settings/job-settings/job-settings.svelte';
+  import MetadataSettings from '$lib/components/admin-page/settings/metadata-settings/metadata-settings.svelte';
   import MachineLearningSettings from '$lib/components/admin-page/settings/machine-learning-settings/machine-learning-settings.svelte';
   import MapSettings from '$lib/components/admin-page/settings/map-settings/map-settings.svelte';
   import OAuthSettings from '$lib/components/admin-page/settings/oauth/oauth-settings.svelte';
@@ -78,6 +79,10 @@
 
       <SettingAccordion title="Logging" subtitle="Manage log settings">
         <LoggingSettings disabled={$featureFlags.configFile} loggingConfig={configs.logging} />
+      </SettingAccordion>
+
+      <SettingAccordion title="Metadata Settings" subtitle="Manage metadata settings">
+        <MetadataSettings disabled={$featureFlags.configFile} metadataConfig={configs.metadata} />
       </SettingAccordion>
 
       <SettingAccordion title="Machine Learning Settings" subtitle="Manage machine learning features and settings">

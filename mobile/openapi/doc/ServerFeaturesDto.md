@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **search** | **bool** |  | 
 **sidecar** | **bool** |  | 
 **trash** | **bool** |  | 
+**importFaces** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

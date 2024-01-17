@@ -71,6 +71,11 @@ void main() {
       // TODO
     });
 
+    // bool importFaces
+    test('to test the property `importFaces`', () async {
+      // TODO
+    });
+
 
   });
 

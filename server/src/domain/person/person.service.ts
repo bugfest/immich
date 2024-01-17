@@ -254,7 +254,7 @@ export class PersonService {
     if (!person) {
       return false;
     }
-
+// TODO: delete only persons not imported from metadata (embedded != [0, 0, 0, ...] )
     try {
       await this.repository.delete(person);
       await this.storageRepository.unlink(person.thumbnailPath);

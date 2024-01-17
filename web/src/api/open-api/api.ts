@@ -3116,6 +3116,12 @@ export interface ServerFeaturesDto {
      * @memberof ServerFeaturesDto
      */
     'trash': boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ServerFeaturesDto
+     */
+    'importFaces'?: boolean;
 }
 /**
  * 

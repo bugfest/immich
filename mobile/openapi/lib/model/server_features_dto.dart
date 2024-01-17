@@ -24,6 +24,7 @@ class ServerFeaturesDto {
     required this.search,
     required this.sidecar,
     required this.trash,
+    this.importFaces,
   });
 
   bool clipEncode;
@@ -48,6 +49,14 @@ class ServerFeaturesDto {
 
   bool trash;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? importFaces;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ServerFeaturesDto &&
      other.clipEncode == clipEncode &&
@@ -60,7 +69,8 @@ class ServerFeaturesDto {
      other.reverseGeocoding == reverseGeocoding &&
      other.search == search &&
      other.sidecar == sidecar &&
-     other.trash == trash;
+     other.trash == trash &&
+     other.importFaces == importFaces;
 
   @override
   int get hashCode =>
@@ -75,10 +85,11 @@ class ServerFeaturesDto {
     (reverseGeocoding.hashCode) +
     (search.hashCode) +
     (sidecar.hashCode) +
-    (trash.hashCode);
+    (trash.hashCode) +
+    (importFaces == null ? 0 : importFaces!.hashCode);
 
   @override
-  String toString() => 'ServerFeaturesDto[clipEncode=$clipEncode, configFile=$configFile, facialRecognition=$facialRecognition, map=$map, oauth=$oauth, oauthAutoLaunch=$oauthAutoLaunch, passwordLogin=$passwordLogin, reverseGeocoding=$reverseGeocoding, search=$search, sidecar=$sidecar, trash=$trash]';
+  String toString() => 'ServerFeaturesDto[clipEncode=$clipEncode, configFile=$configFile, facialRecognition=$facialRecognition, map=$map, oauth=$oauth, oauthAutoLaunch=$oauthAutoLaunch, passwordLogin=$passwordLogin, reverseGeocoding=$reverseGeocoding, search=$search, sidecar=$sidecar, trash=$trash, importFaces=$importFaces]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -93,6 +104,11 @@ class ServerFeaturesDto {
       json[r'search'] = this.search;
       json[r'sidecar'] = this.sidecar;
       json[r'trash'] = this.trash;
+    if (this.importFaces != null) {
+      json[r'importFaces'] = this.importFaces;
+    } else {
+    //  json[r'importFaces'] = null;
+    }
     return json;
   }
 
@@ -115,6 +131,7 @@ class ServerFeaturesDto {
         search: mapValueOfType<bool>(json, r'search')!,
         sidecar: mapValueOfType<bool>(json, r'sidecar')!,
         trash: mapValueOfType<bool>(json, r'trash')!,
+        importFaces: mapValueOfType<bool>(json, r'importFaces'),
       );
     }
     return null;
