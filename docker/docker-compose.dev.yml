@@ -159,6 +159,17 @@ services:
   #   volumes:
   #     - grafana-data:/var/lib/grafana
 
+  open-api:
+    profiles: [open-api]
+    restart: no
+    container_name: immich_openapi
+    image: immich-open-api:latest
+    build:
+      context: ../open-api
+    command: bash -xc "npm --prefix server ci && npm --prefix server run build && make open-api"
+    volumes:
+      - ../:/usr/src/
+
 volumes:
   model-cache:
   prometheus-data:

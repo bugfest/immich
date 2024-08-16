@@ -22,7 +22,11 @@ prod-scale:
 
 .PHONY: open-api
 open-api:
-	cd ./open-api && bash ./bin/generate-open-api.sh
+        cd ./open-api && bash ./bin/generate-open-api.sh
+
+.PHONY: open-api-docker
+open-api-docker:
+	docker compose -f ./docker/docker-compose.dev.yml --profile open-api up --build -V open-api 
 
 open-api-dart:
 	cd ./open-api && bash ./bin/generate-open-api.sh dart
